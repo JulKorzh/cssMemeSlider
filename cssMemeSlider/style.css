@@ -1,4 +1,115 @@
-*{
+* {
     padding: 0;
     margin: 0;
+}
+
+body {
+    background-color: rgb(37, 37, 37);
+    padding: 20px 80px;
+    overflow: hidden;
+}
+
+.container {
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.slider {
+    width: 400%;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 0;
+    transition: 0.4s;
+}
+
+.image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 500px;
+    width: 100%;
+}
+
+.image:nth-child(1) {
+    background-image: url(imgs/-5271640505924570300_121.jpg);
+}
+
+.image:nth-child(2) {
+    background-image: url(imgs/1688173370236.png);
+}
+
+.image:nth-child(3) {
+    background-image: url(imgs/EDCC99ORfEM.jpg);
+}
+
+.image:nth-child(4) {
+    background-image: url(imgs/IMG_5107.png);
+}
+
+
+.text {
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+}
+
+.buttons input {
+    display: none;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.controls label {
+    width: 15px;
+    height: 15px;
+    border: 3px solid rgb(68, 112, 235);
+    background-color: rgb(68, 112, 235);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.controls label:hover {
+    border-color: white;
+    background-color: white;
+}
+
+.buttons input:nth-child(1):checked~.controls label:nth-child(1),
+.buttons input:nth-child(2):checked~.controls label:nth-child(2),
+.buttons input:nth-child(3):checked~.controls label:nth-child(3),
+.buttons input:nth-child(4):checked~.controls label:nth-child(4) {
+    border: 3px solid rgb(68, 112, 235);
+    background-color: transparent;
+}
+
+.buttons input:checked:hover~.controls label:hover {
+    border-color: white;
+}
+
+.buttons input:nth-child(1):checked~.image:nth-child(1),
+.buttons input:nth-child(2):checked~.image:nth-child(2),
+.buttons input:nth-child(3):checked~.image:nth-child(3),
+.buttons input:nth-child(4):checked~.image:nth-child(4) {
+    animation-name: openslide;
+}
+.buttons input:nth-child(1):checked~.slider{
+    left: 0;
+}
+.buttons input:nth-child(2):checked~.slider{
+    left: -100%;
+}
+.buttons input:nth-child(3):checked~.slider{
+    left: -200%;
+}
+.buttons input:nth-child(4):checked~.slider{
+    left: -300%;
 }

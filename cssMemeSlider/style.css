@@ -6,21 +6,18 @@
 body {
     background-color: rgb(37, 37, 37);
     padding: 20px 80px;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .container {
     padding-bottom: 50px;
-    position: relative;
 }
 
-.slider {
+.slider__images {
     width: 400%;
-    margin-bottom: 40px;
+    margin-bottom: 4rem;
     display: flex;
     justify-content: center;
-    position: relative;
-    left: 0;
     transition: 0.4s;
 }
 
@@ -28,7 +25,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    height: 500px;
+    height: 30em;
     width: 100%;
 }
 
@@ -48,24 +45,32 @@ body {
     background-image: url(imgs/IMG_5107.png);
 }
 
-
+.box{
+    display: flex;
+    justify-content: space-between;
+}
+.slider__text{
+    width: 70%;
+    display: inline-flex;
+    justify-content: flex-start;
+}
 .text {
+    margin-left: 100%;
+    width: 100%;
     color: #fff;
     font-weight: bold;
-    font-size: 22px;
-    letter-spacing: 1.5px;
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+    transition: margin-left 0.3s ease-out;
 }
 
-.buttons input {
+.slider input {
     display: none;
 }
 
 .controls {
-    display: flex;
+    display: inline-flex;
     gap: 10px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
 }
 
 .controls label {
@@ -75,7 +80,7 @@ body {
     background-color: rgb(68, 112, 235);
     border-radius: 15px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .controls label:hover {
@@ -83,33 +88,52 @@ body {
     background-color: white;
 }
 
-.buttons input:nth-child(1):checked~.controls label:nth-child(1),
-.buttons input:nth-child(2):checked~.controls label:nth-child(2),
-.buttons input:nth-child(3):checked~.controls label:nth-child(3),
-.buttons input:nth-child(4):checked~.controls label:nth-child(4) {
+.slider input:nth-child(1):checked~.box .controls label:nth-child(1),
+.slider input:nth-child(2):checked~.box .controls label:nth-child(2),
+.slider input:nth-child(3):checked~.box .controls label:nth-child(3),
+.slider input:nth-child(4):checked~.box .controls label:nth-child(4) {
     border: 3px solid rgb(68, 112, 235);
     background-color: transparent;
 }
 
-.buttons input:checked:hover~.controls label:hover {
+.slider input:checked:hover~.controls label:hover {
     border-color: white;
 }
 
-.buttons input:nth-child(1):checked~.image:nth-child(1),
-.buttons input:nth-child(2):checked~.image:nth-child(2),
-.buttons input:nth-child(3):checked~.image:nth-child(3),
-.buttons input:nth-child(4):checked~.image:nth-child(4) {
-    animation-name: openslide;
+.slider input:nth-child(1):checked~.image:nth-child(1),
+.slider input:nth-child(2):checked~.image:nth-child(2),
+.slider input:nth-child(3):checked~.image:nth-child(3),
+.slider input:nth-child(4):checked~.image:nth-child(4) {
 }
-.buttons input:nth-child(1):checked~.slider{
-    left: 0;
+.slider input:nth-child(1):checked~.slider__images{
+    transform: translateX(0);
 }
-.buttons input:nth-child(2):checked~.slider{
-    left: -100%;
+.slider input:nth-child(2):checked~.slider__images{
+    transform: translateX(-25%);
 }
-.buttons input:nth-child(3):checked~.slider{
-    left: -200%;
+.slider input:nth-child(3):checked~.slider__images{
+    transform: translateX(-50%);
 }
-.buttons input:nth-child(4):checked~.slider{
-    left: -300%;
+.slider input:nth-child(4):checked~.slider__images{
+    transform: translateX(-75%);
+}
+
+.slider input:nth-child(1):checked~.box .slider__text .text:nth-child(1){
+    flex-shrink: 0;
+    margin-left: 0;
+}
+.slider input:nth-child(2):checked~.box .slider__text .text:nth-child(2){
+    flex-shrink: 0;
+    margin-left: 0;
+    order: -1;
+}
+.slider input:nth-child(3):checked~.box .slider__text .text:nth-child(3){
+    flex-shrink: 0;
+    margin-left: 0;
+    order: -1;
+}
+.slider input:nth-child(4):checked~.box .slider__text .text:nth-child(4){
+    flex-shrink: 0;
+    margin-left: 0;
+    order: -1;
 }

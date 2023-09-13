@@ -15,6 +15,7 @@ body {
 }
 
 .container {
+    overflow: hidden;
     height: 100vh;
     padding: 0 3%;
 }
@@ -27,7 +28,6 @@ body {
 }
 
 .slider__images {
-    overflow: hidden;
     height: 70%;
     width: 400%;
     display: flex;

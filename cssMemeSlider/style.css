@@ -1,18 +1,22 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
+
+html {
+    font-size: 10px;
+  }
 
 body {
     background-color: rgb(37, 37, 37);
     padding: 20px 0;
     overflow: hidden;
-    font-size: 10rem;
 }
 
 .container {
     height: 100vh;
-    padding: 0 100px;
+    padding: 0 3%;
 }
 
 .slider{
@@ -35,6 +39,7 @@ body {
     background-position: center;
     background-size: contain;
     width: 100%;
+    margin: 0 3%;
 }
 
 .image:nth-child(1) {
@@ -57,6 +62,7 @@ body {
     height: 30%;
     display: flex;
     justify-content: space-between;
+    margin: 0 12%;
 }
 .slider__text{
     width: 70%;
@@ -67,7 +73,7 @@ body {
     margin-left: 100%;
     width: 100%;
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 2rem;
     letter-spacing: 0.1rem;
     transition: margin-left 0.35s ease-out;
 }
@@ -82,8 +88,8 @@ body {
 }
 
 .controls label {
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border: 0.2rem solid rgb(68, 112, 235);
     background-color: rgb(68, 112, 235);
     border-radius: 50%;
@@ -144,4 +150,30 @@ body {
     flex-shrink: 0;
     margin-left: 0;
     order: -1;
+}
+
+@media (max-width: 767px){
+    .container{
+    }
+
+    .slider__images{
+        height: 50%;
+    }
+    .box{
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+        height: auto;
+    }
+
+    .controls {
+        justify-content: center;
+    }
+
+    .slider__text{
+        width: 100%;
+    }
+
+    .text{
+        font-size: 1.8rem;
+    }
 }
